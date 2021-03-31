@@ -1,29 +1,22 @@
-import { useState, useEffect } from 'react';
-import { AuthProvider, useAuth } from '../auth';
+import { useEffect } from 'react';
+import { AuthProvider, useAuth } from './auth';
 
-import './index.css';
+import '../styles.css';
 
 const twitch = window?.Twitch?.ext;
 
 function Config({ live }: ConfigProps) {
-  const [theme, setTheme] = useState('light');
-
   const { isLoading } = useAuth();
 
   useEffect(() => {
-    if (twitch) {
-      twitch.onContext((context, delta) => {
-        if (delta.includes('theme') && context.theme) setTheme(context.theme);
+    if (twitch && live) {
+      twitch.listen('broadcast', (target, contentType, body) => {
+        twitch.rig.log(
+          `New PubSub message!\n${target}\n${contentType}\n${body}`
+        );
+        // now that you've got a listener, do something with the result...
+        // do something...
       });
-      if (live) {
-        twitch.listen('broadcast', (target, contentType, body) => {
-          twitch.rig.log(
-            `New PubSub message!\n${target}\n${contentType}\n${body}`
-          );
-          // now that you've got a listener, do something with the result...
-          // do something...
-        });
-      }
     }
     return () => {
       if (twitch && live) {
@@ -35,7 +28,7 @@ function Config({ live }: ConfigProps) {
   }, [live]);
 
   return (
-    <div className={theme === 'light' ? 'light' : 'dark'}>
+    <div>
       {isLoading ? (
         <p>Loading...</p>
       ) : live ? (

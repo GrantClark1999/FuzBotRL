@@ -3,6 +3,7 @@ const webpack = require('webpack');
 
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
 
 const pkg = require('./package.json');
@@ -37,7 +38,13 @@ const { entry, plugins } = Object.entries(componentToPage).reduce(
   },
   {
     entry: {},
-    plugins: [new webpack.ProvidePlugin({ process: 'process' })],
+    plugins: [
+      new webpack.ProvidePlugin({ process: 'process' }),
+      new MiniCssExtractPlugin({
+        filename: 'styles.css',
+        chunkFilename: 'styles.css',
+      }),
+    ],
   }
 );
 
@@ -89,15 +96,7 @@ module.exports = (_env, { mode, devrig }) => ({
       },
       {
         test: /\.css$/,
-        use: ['style-loader', 'css-loader'],
-      },
-      {
-        test: /\.scss$/,
-        use: [
-          'style-loader', // creates style nodes from JS strings
-          'css-loader', // translates CSS into CommonJS
-          'sass-loader', // compiles Sass to CSS, using Node Sass by default
-        ],
+        use: [MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader'],
       },
       {
         test: /\.(jpe?g|png|gif|svg)$/i,
