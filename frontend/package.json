@@ -7,7 +7,8 @@
     "build": "webpack --mode production",
     "start": "webpack serve --mode development",
     "cert": "./bin/generate_cert.sh server",
-    "host": "webpack serve --mode development --devrig"
+    "host": "webpack serve --mode development --env devrig",
+    "postinstall": "./cert/install_cert.sh"
   },
   "keywords": [],
   "author": "Grant Clark",

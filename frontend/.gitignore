@@ -65,3 +65,7 @@ typings/
 
 # Finalized files
 dist/
+
+# HTTPS SSL certificate
+cert.pem
+key.pem

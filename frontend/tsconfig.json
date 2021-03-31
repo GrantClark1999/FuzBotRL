@@ -15,8 +15,9 @@
     "noFallthroughCasesInSwitch": true,
     "paths": {
       "app": ["src/app"],
-      "config": ["src/config"],
       "auth": ["src/auth"],
+      "config": ["src/config"],
+      "constants": ["src/constants"],
       "components/*": ["src/components/*"],
       "pages/*": ["src/pages/*"]
     }

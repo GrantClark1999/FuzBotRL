@@ -1,4 +1,5 @@
 const { resolve } = require('path');
+const { readFileSync } = require('fs');
 const webpack = require('webpack');
 
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
@@ -52,7 +53,7 @@ const babelOptions = {
   presets: [require('@babel/preset-env'), require('@babel/preset-react')],
 };
 
-module.exports = (_env, { mode, devrig }) => ({
+module.exports = ({ devrig }, { mode }) => ({
   entry,
   plugins: plugins.concat(mode === 'development' ? devPlugins : prodPlugins),
   optimization: {
@@ -62,13 +63,16 @@ module.exports = (_env, { mode, devrig }) => ({
     mode === 'development'
       ? {
           contentBase: resolve(__dirname, 'dist'),
-          https: true,
+          https: {
+            key: readFileSync('./cert/key.pem'),
+            cert: readFileSync('./cert/cert.pem'),
+          },
           port: 8080,
           host: devrig ? 'localhost.rig.twitch.tv' : 'localhost',
           headers: {
             'Access-Control-Allow-Origin': '*',
           },
-          allowedHosts: ['localhost.rig.twitch.tv', 'localhost'],
+          // allowedHosts: ['localhost.rig.twitch.tv', 'localhost'],
         }
       : undefined,
   module: {

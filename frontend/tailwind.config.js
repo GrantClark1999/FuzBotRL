@@ -1,5 +1,3 @@
-const colors = require('tailwindcss/colors');
-
 module.exports = {
   purge: ['./dist/**/*.html', './dist/**/*.js'],
   darkMode: false, // or 'media' or 'class'
@@ -7,8 +5,8 @@ module.exports = {
     extend: {
       colors: {
         transparent: 'transparent',
-        black: colors.black,
-        white: colors.white,
+        black: '#000000',
+        white: '#FFFFFF',
         'rl-common': {
           light: '#2A2C2F',
           DEFAULT: '#989898',
