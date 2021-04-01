@@ -1,7 +1,8 @@
-import { useEffect } from 'react';
-import { AuthProvider, useAuth } from './auth';
-
 import '../styles.css';
+
+import { useEffect } from 'react';
+
+import { AuthProvider, useAuth } from './auth';
 
 const twitch = window?.Twitch?.ext;
 

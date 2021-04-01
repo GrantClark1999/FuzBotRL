@@ -112,7 +112,7 @@ module.exports = ({ devrig }, { mode }) => ({
     ],
   },
   resolve: {
-    extensions: ['.ts', '.tsx', '.js', '.json'],
+    extensions: ['.ts', '.tsx', '.js'],
     fallback: {
       stream: require.resolve('stream-browserify'),
       crypto: require.resolve('crypto-browserify'),

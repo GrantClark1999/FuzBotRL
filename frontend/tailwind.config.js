@@ -1,12 +1,18 @@
+const colors = require('tailwindcss/colors');
+
 module.exports = {
   purge: ['./dist/**/*.html', './dist/**/*.js'],
   darkMode: false, // or 'media' or 'class'
   theme: {
+    filter: {
+      none: 'none',
+      blur: 'blur(1px)',
+    },
     extend: {
       colors: {
         transparent: 'transparent',
-        black: '#000000',
-        white: '#FFFFFF',
+        black: colors.black,
+        white: colors.white,
         'rl-common': {
           light: '#2A2C2F',
           DEFAULT: '#989898',
@@ -46,7 +52,18 @@ module.exports = {
     },
   },
   variants: {
-    extend: {},
+    filter: ['responsive', 'after'],
+    extend: {
+      position: ['after'],
+      inset: ['after'],
+      borderColor: ['after'],
+      borderRadius: ['after'],
+      borderWidth: ['after'],
+    },
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/aspect-ratio'),
+    require('tailwindcss-pseudo-elements'),
+    require('tailwindcss-filters'),
+  ],
 };

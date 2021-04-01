@@ -3,7 +3,7 @@
  * Courtesy of: https://docs.google.com/spreadsheets/d/1GvlRejt7bUiYnHPS9td8JXQ4GCsGIJmmoB8uUTRCQ-k/edit#gid=1691273010
  */
 
-export const blue = [
+export const BLUE = [
   ['#507F39', '#65B23E', '#72E539', '#5CFC0C', '#4ACC0A', '#3CA508', '#2E7F06'],
   ['#397F3F', '#3EB248', '#39E547', '#0CFC20', '#0ACC1A', '#08A515', '#067F10'],
   ['#397F64', '#3EB286', '#39E5A3', '#0CFCA0', '#0ACC81', '#08A569', '#067F51'],
@@ -16,7 +16,7 @@ export const blue = [
   ['#51397F', '#673EB2', '#7539E5', '#600CFC', '#4E0ACC', '#3F08A5', '#30067F'],
 ];
 
-export const orange = [
+export const ORANGE = [
   ['#7F7F39', '#B2B23E', '#E5E539', '#FCFC0C', '#CCCC0A', '#A5A508', '#7F7F06'],
   ['#7F7039', '#B2993E', '#E5C039', '#FCC80C', '#CCA20A', '#A58308', '#7F6506'],
   ['#7F6339', '#B2843E', '#E5A039', '#FC9C0C', '#CC7E0A', '#A56608', '#7F4F06'],
@@ -29,7 +29,7 @@ export const orange = [
   ['#7F395C', '#B23E78', '#E5398F', '#FC0C84', '#CC0A6B', '#A50857', '#7F0642'],
 ];
 
-export const accent = [
+export const ACCENT = [
   ['#E5E5E5', '#BFBFBF', '#999999', '#666666', '#3F3F3F', '#262626', '#000000'],
   ['#FF7F7F', '#FF5959', '#FF3232', '#FF0000', '#B20000', '#660000', '#330000'],
   ['#FF9F7F', '#FF8259', '#FF6532', '#FF3F00', '#B22C00', '#661900', '#330C00'],
@@ -51,7 +51,7 @@ export const accent = [
  * Item paints sorted by respective id.
  */
 
-export const paints = [
+export const PAINTS = [
   { name: 'None', color: '#000000' },
   { name: 'Crimson', color: '#d40001' },
   { name: 'Lime', color: '#7efd01' },
@@ -66,4 +66,24 @@ export const paints = [
   { name: 'Grey', color: '#777777' },
   { name: 'Titanium White', color: '#FFFFFF' },
   { name: 'Saffron', color: '#fdea3b' },
+  // TODO: Fill in BakkesMod hex color codes
+  { name: 'Gold', color: '#000000' },
+  { name: 'Rose Gold', color: '#000000' },
+  { name: 'White Gold', color: '#000000' },
+  { name: 'Onyx', color: '#000000' },
+  { name: 'Platinum', color: '#000000' },
 ];
+
+export enum SLOT {
+  BODY = 0,
+  SKIN = 1,
+  WHEELS = 2,
+  BOOST = 3,
+  ANTENNA = 4,
+  HAT = 5,
+  PAINTFINISH = 7,
+  PAINTFINISH_SECONDARY = 12,
+  ENGINE_AUDIO = 13,
+  SUPERSONIC_TRAIL = 14,
+  GOALEXPLOSION = 15,
+}

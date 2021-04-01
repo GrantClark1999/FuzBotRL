@@ -1,9 +1,9 @@
-import { useState, useEffect } from 'react';
-import { AuthProvider, useAuth } from './auth';
+import '../styles.css';
 
 import RLItem from 'components/RLItem';
+import { useEffect, useState } from 'react';
 
-import '../styles.css';
+import { AuthProvider, useAuth } from './auth';
 
 const twitch = window?.Twitch?.ext;
 

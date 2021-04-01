@@ -2,6 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer utilities {
+  @variants after {
+    .content-empty {
+      content: '';
+    }
+  }
+}
+
 html {
   width: 100%;
   height: 100%;
