@@ -72,7 +72,6 @@ module.exports = ({ devrig }, { mode }) => ({
           headers: {
             'Access-Control-Allow-Origin': '*',
           },
-          // allowedHosts: ['localhost.rig.twitch.tv', 'localhost'],
         }
       : undefined,
   module: {
@@ -108,6 +107,10 @@ module.exports = ({ devrig }, { mode }) => ({
         generator: {
           filename: 'img/[name].[ext]',
         },
+      },
+      {
+        test: /\.(woff|woff2|eot|ttf|otf)$/i,
+        type: 'asset/resource',
       },
     ],
   },

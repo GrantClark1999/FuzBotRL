@@ -19,8 +19,10 @@
       "config": ["src/config"],
       "constants": ["src/constants"],
       "components/*": ["src/components/*"],
-      "pages/*": ["src/pages/*"]
+      "pages/*": ["src/pages/*"],
+      "styles": ["styles.css"]
     }
   },
-  "include": ["src"]
+  "include": ["src"],
+  "files": ["@types/index.d.ts"]
 }

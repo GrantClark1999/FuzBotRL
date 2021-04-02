@@ -47,33 +47,7 @@ export const ACCENT = [
   ['#FF7F94', '#FF5974', '#FF3255', '#FF002A', '#B2001D', '#660011', '#330008'],
 ];
 
-/**
- * Item paints sorted by respective id.
- */
-
-export const PAINTS = [
-  { name: 'None', color: '#000000' },
-  { name: 'Crimson', color: '#d40001' },
-  { name: 'Lime', color: '#7efd01' },
-  { name: 'Black', color: '#111111' },
-  { name: 'Cobalt', color: '#3f51b4' },
-  { name: 'Sky Blue', color: '#03a8f3' },
-  { name: 'Burnt Sienna', color: '#4c1101' },
-  { name: 'Forest Green', color: '#4cae50' },
-  { name: 'Purple', color: '#9C27B0' },
-  { name: 'Pink', color: '#fd4080' },
-  { name: 'Orange', color: '#f3b301' },
-  { name: 'Grey', color: '#777777' },
-  { name: 'Titanium White', color: '#FFFFFF' },
-  { name: 'Saffron', color: '#fdea3b' },
-  // TODO: Fill in BakkesMod hex color codes
-  { name: 'Gold', color: '#000000' },
-  { name: 'Rose Gold', color: '#000000' },
-  { name: 'White Gold', color: '#000000' },
-  { name: 'Onyx', color: '#000000' },
-  { name: 'Platinum', color: '#000000' },
-];
-
+// TODO: Offload / Move to Backend
 export enum SLOT {
   BODY = 0,
   SKIN = 1,
