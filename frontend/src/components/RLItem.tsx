@@ -20,16 +20,15 @@ export default function RLItem({ item, team }: RLItemProps) {
       {/* Team Color / Name */}
       <div
         className={clsx(
-          'relative aspect-w-13 aspect-h-15',
-          // Before => Gradient Background
-          'before:absolute before:z-10 before:inset-0 before:bg-gradient-to-t before:rounded-lg before:from-rarity-limited-gradient before:content-empty',
+          'relative bg-gradient-to-t aspect-w-13 aspect-h-15',
+          `from-rarity-${rarity.toLowerCase()}-gradient-b to-rarity-${rarity.toLowerCase()}-gradient-t`,
           // After => Blurred Black Border
           'after:absolute after:z-20 after:-inset-0.5 after:border-4 after:border-black after:rounded-lg after:filter-blur after:content-empty'
         )}
       >
         <img
           src={src}
-          className="mx-auto h-auto object-contain max-w-7/8"
+          className="mx-auto max-w-7/8 h-auto object-contain blend-screen filter-brightness"
           style={{ bottom: textHeight }}
         />
         <div className="absolute z-10 bottom-0 inset-auto flex flex-col h-auto text-center text-base leading-4">
@@ -42,7 +41,7 @@ export default function RLItem({ item, team }: RLItemProps) {
           </Cycle>
           <p
             ref={nameRef}
-            className="pb-2 border-black text-rarity-limited text-shadow"
+            className={`pb-2 border-black text-rarity-${rarity.toLowerCase()} text-shadow`}
           >
             {name}
           </p>

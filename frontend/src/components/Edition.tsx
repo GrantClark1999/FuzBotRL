@@ -8,10 +8,10 @@ export default function Edition({
   ...props
 }: EditionProps) {
   return (
-    <div className="w-full text-white tracking-wider font-rl">
+    <div className="w-full text-white font-rl tracking-wider">
       <p
         className={clsx(
-          'py-0.5 w-full bg-gradient-to-r bg-center from-transparent via-black overflow-hidden bg-250%',
+          'py-0.5 w-full bg-gradient-to-r bg-center from-transparent via-black overflow-hidden bg-250',
           `text-shadow-${rarity.toLowerCase()}`,
           className
         )}

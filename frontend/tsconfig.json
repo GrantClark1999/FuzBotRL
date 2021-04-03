@@ -15,10 +15,11 @@
     "noFallthroughCasesInSwitch": true,
     "paths": {
       "app": ["src/app"],
+      "assets/*": ["src/assets/*"],
       "auth": ["src/auth"],
       "config": ["src/config"],
-      "constants": ["src/constants"],
       "components/*": ["src/components/*"],
+      "images": ["src/assets/images"],
       "pages/*": ["src/pages/*"],
       "styles": ["styles.css"]
     }

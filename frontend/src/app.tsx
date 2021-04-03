@@ -1,5 +1,6 @@
 import 'styles';
 
+import Navbar from 'components/Navbar';
 import RLItem from 'components/RLItem';
 import { useEffect, useState } from 'react';
 
@@ -8,11 +9,11 @@ import { AuthProvider, useAuth } from './auth';
 const twitch = window?.Twitch?.ext;
 
 const stubItem: Item = {
-  name: 'Blade Wave',
+  name: 'Dimonix',
   src:
-    'https://rocket-league.com/content/media/items/avatar/220px/114e6787451585165521.png',
+    'https://rocket-league.com/content/media/items/avatar/220px/dimonix3/dimonix-BurntSienna.png',
   rarity: 'LIMITED',
-  paint: 'TITANIUM_WHITE',
+  paint: 'BURNT_SIENNA',
   edition: 'INVERTED',
 };
 
@@ -42,9 +43,12 @@ function App() {
   if (isLoading || !isVisible) return <div className="App"></div>;
 
   return (
-    <div className="flex justify-around pt-4 w-full">
-      <RLItem item={stubItem} team="blue" />
-      <RLItem item={stubItem} team="orange" />
+    <div className="flex flex-col h-full">
+      <Navbar />
+      <div className="flex flex-1 items-center justify-around">
+        <RLItem item={stubItem} team="blue" />
+        <RLItem item={stubItem} team="orange" />
+      </div>
     </div>
   );
 }

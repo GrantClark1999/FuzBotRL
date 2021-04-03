@@ -13,13 +13,13 @@
 @font-face {
   font-family: 'Bourgeois-Book';
   src: local('Bourgeois-Book'),
-    url(./src/fonts/Bourgeois-Book.otf) format('opentype');
+    url(./src/assets/fonts/Bourgeois-Book.otf) format('opentype');
 }
 
 body > #root {
   width: 100vw;
   height: 100vh;
   font-family: Roboto, Arial, Helvetica, sans-serif;
-  background: linear-gradient(rgb(47, 87, 138), rgb(8, 8, 22));
+  background: linear-gradient(#294573, #0d0c1e);
   color: #fff;
 }

@@ -7,6 +7,9 @@ module.exports = {
     filter: {
       none: 'none',
       blur: 'blur(1px)',
+      brightness: 'brightness(200%)',
+      'menu-active':
+        'brightness(0.5) sepia(1) saturate(10000%) hue-rotate(192deg) brightness(95%)',
     },
     fontFamily: {
       sans: 'Roboto, Arial, Helvetica, sans-serif',
@@ -29,51 +32,18 @@ module.exports = {
     },
     extend: {
       backgroundSize: {
-        '250%': '250%',
+        250: '250%',
       },
       colors: {
         transparent: 'transparent',
         black: colors.black,
         white: colors.white,
-        rarity: {
-          common: {
-            light: '#2A2C2F',
-            DEFAULT: '#989898',
-            dark: '#121519',
-          },
-          uncommon: {
-            light: '#243C47',
-            DEFAULT: '#83D9FB',
-            dark: '#101B23',
-          },
-          very_rare: {
-            light: '#2A2044',
-            DEFAULT: '#9976FA',
-            dark: '#120E1E',
-          },
-          import: {
-            light: '#451518',
-            DEFAULT: '#EE3C3C',
-            dark: '#1D0D10',
-          },
-          exotic: {
-            light: '#424022',
-            DEFAULT: '#EDD751',
-            dark: '#1E1E15',
-          },
-          limited: {
-            gradient: '#F7783966',
-            // light: '#84442A80',
-            DEFAULT: '#FF7E45',
-            // dark: '#341E1A80',
-            // light: '#422215',
-            // dark: '#1A0F0D',
-          },
-          premium: {
-            light: '#244839',
-            DEFAULT: '#78F0B0',
-            dark: '#0E1A19',
-          },
+        // Custom Colors
+        navbar: {
+          DEFAULT: '#294476',
+          arrow: '#00101E',
+          gradient: { b: '#42AEFF1F', t: '#42AEFF99' },
+          item: '#005F8E',
         },
         paint: {
           crimson: '#d40001',
@@ -96,29 +66,105 @@ module.exports = {
           onyx: '#000000',
           platinum: '#000000',
         },
+        rarity: {
+          common: {
+            gradient: {
+              b: '#2A2C2F',
+              t: '#121519',
+              // b: '#7DD9FD66',
+              // t: 'transparent',
+            },
+            DEFAULT: '#989898',
+          },
+          uncommon: {
+            gradient: {
+              b: '#243C47',
+              t: '#101B23',
+              // b: '#7DD9FD66',
+              // t: 'transparent',
+            },
+            DEFAULT: '#83D9FB',
+          },
+          very_rare: {
+            gradient: {
+              b: '#2A2044',
+              t: '#120E1E',
+              // b: '#9E7CFC66',
+              // t: 'transparent',
+            },
+            DEFAULT: '#9976FA',
+          },
+          import: {
+            gradient: {
+              b: '#451518',
+              t: '#1D0D10',
+              // b: '#E35A5266',
+              // t: 'transparent',
+            },
+            DEFAULT: '#EE3C3C',
+          },
+          exotic: {
+            gradient: {
+              b: '#424022',
+              t: '#1E1E15',
+              // b: '#ECDB6C66',
+              // t: 'transparent',
+            },
+            DEFAULT: '#EDD751',
+          },
+          black_market: {
+            gradient: {
+              b: '#2906AFBF',
+              t: '#EF07D9BF',
+            },
+            DEFAULT: '#FE00BE',
+          },
+          limited: {
+            gradient: {
+              b: '#422215',
+              t: '#1A0F0D',
+              // b: '#F7793966',
+              // t: 'transparent',
+            },
+            DEFAULT: '#FF7E45',
+          },
+          premium: {
+            gradient: {
+              b: '#244839',
+              t: '#0E1A19',
+              // b: '#6bf1ae66',
+              // t: 'transparent',
+            },
+            DEFAULT: '#78F0B0',
+          },
+        },
       },
       maxWidth: {
         '7/8': '87.5%',
       },
+      boxShadow: {
+        glow: '0 -2px 8px #42AEFF',
+      },
     },
   },
   variants: {
-    filter: ['responsive', 'after'],
     extend: {
-      position: ['before', 'after'],
-      zIndex: ['before', 'after'],
-      inset: ['before', 'after'],
-      backgroundImage: ['before'],
-      gradientColorStops: ['before'],
+      backgroundImage: ['hover'],
       borderColor: ['after'],
-      borderRadius: ['before', 'after'],
+      borderRadius: ['after'],
       borderWidth: ['after'],
+      inset: ['after'],
+      position: ['after'],
+      width: ['hover'],
+      zIndex: ['after'],
     },
+    filter: ['responsive', 'hover', 'after'],
   },
   plugins: [
     require('@tailwindcss/aspect-ratio'),
     require('tailwindcss-filters'),
     require('tailwindcss-pseudo-elements'),
     require('tailwindcss-textshadow'),
+    require('tailwindcss-blend-mode')(),
   ],
 };
