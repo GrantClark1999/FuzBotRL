@@ -17,7 +17,7 @@ export default [
   boost,
   topper,
   antenna,
-  // explosion,
-  // trail,
-  // anthem,
+  explosion,
+  trail,
+  anthem,
 ];

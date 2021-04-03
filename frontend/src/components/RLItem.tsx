@@ -20,10 +20,10 @@ export default function RLItem({ item, team }: RLItemProps) {
       {/* Team Color / Name */}
       <div
         className={clsx(
-          'relative bg-gradient-to-t aspect-w-13 aspect-h-15',
+          'relative bg-gradient-to-t rounded aspect-w-13 aspect-h-15',
           `from-rarity-${rarity.toLowerCase()}-gradient-b to-rarity-${rarity.toLowerCase()}-gradient-t`,
           // After => Blurred Black Border
-          'after:absolute after:z-20 after:-inset-0.5 after:border-4 after:border-black after:rounded-lg after:filter-blur after:content-empty'
+          'after:absolute after:z-20 after:-inset-0.5 after:border-4 after:border-black after:rounded-lg after:filter-blur after:content'
         )}
       >
         <img

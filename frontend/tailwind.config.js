@@ -10,6 +10,7 @@ module.exports = {
       brightness: 'brightness(200%)',
       'menu-active':
         'brightness(0.5) sepia(1) saturate(10000%) hue-rotate(192deg) brightness(95%)',
+      glow: 'drop-shadow(0 0 2px #FFFFFF80)',
     },
     fontFamily: {
       sans: 'Roboto, Arial, Helvetica, sans-serif',
@@ -26,13 +27,16 @@ module.exports = {
         {}
       );
       shadows.default = [2, 2, 4, 4, 6, 6]
-        .map((blur) => `0 0 ${blur}px ${theme('colors').black}`)
+        .map((blur) => `0 0 ${blur}px black`)
         .join(', ');
       return shadows;
     },
     extend: {
       backgroundSize: {
         250: '250%',
+      },
+      boxShadow: {
+        glow: '0 -2px 8px #42AEFF',
       },
       colors: {
         transparent: 'transparent',
@@ -41,9 +45,10 @@ module.exports = {
         // Custom Colors
         navbar: {
           DEFAULT: '#294476',
-          arrow: '#00101E',
+          arrow: '#00102180',
           gradient: { b: '#42AEFF1F', t: '#42AEFF99' },
           item: '#005F8E',
+          overflow: '#103C5A',
         },
         paint: {
           crimson: '#d40001',
@@ -142,20 +147,25 @@ module.exports = {
       maxWidth: {
         '7/8': '87.5%',
       },
-      boxShadow: {
-        glow: '0 -2px 8px #42AEFF',
+      transitionDuration: {
+        250: '250ms',
       },
     },
   },
   variants: {
     extend: {
-      backgroundImage: ['hover'],
+      backgroundColor: ['after'],
+      backgroundImage: ['after', 'hover'],
       borderColor: ['after'],
       borderRadius: ['after'],
       borderWidth: ['after'],
+      gradientColorStops: ['after'],
       inset: ['after'],
+      opacity: ['after'],
+      pointerEvents: ['after'],
       position: ['after'],
-      width: ['hover'],
+      transitionDuration: ['after'],
+      transitionProperty: ['after'],
       zIndex: ['after'],
     },
     filter: ['responsive', 'hover', 'after'],

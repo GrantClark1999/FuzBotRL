@@ -1,6 +1,6 @@
 import 'styles';
 
-import Navbar from 'components/Navbar';
+import Nav from 'components/Nav';
 import RLItem from 'components/RLItem';
 import { useEffect, useState } from 'react';
 
@@ -19,6 +19,7 @@ const stubItem: Item = {
 
 function App() {
   const [isVisible, setIsVisible] = useState(true);
+  const [tab, setTab] = useState('body');
 
   const { isLoading } = useAuth();
 
@@ -44,7 +45,7 @@ function App() {
 
   return (
     <div className="flex flex-col h-full">
-      <Navbar />
+      <Nav onChange={setTab} />
       <div className="flex flex-1 items-center justify-around">
         <RLItem item={stubItem} team="blue" />
         <RLItem item={stubItem} team="orange" />
